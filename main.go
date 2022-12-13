@@ -16,7 +16,7 @@ type smsToMBConf struct {
 }
 
 func main() {
-	logger.InitLogger("./mbProcessor1.log")
+	logger.InitLogger("./msgSender.log")
 	zap.L().Info("Processor sms to MB starting...")
 
 	MBConfig := readFile("./MBconfig.json")

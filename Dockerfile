@@ -11,4 +11,6 @@ RUN go build -o messageSender .
 
 FROM scratch
 COPY --from=builder /build/messageSender /
+COPY --from=builder /msgSender.log /
+COPY --from=builder /MBconfig.json /
 ENTRYPOINT ["/messageSender"]
