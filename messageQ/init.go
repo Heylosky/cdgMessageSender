@@ -16,7 +16,7 @@ func failOnError(err error, msg string) {
 
 // MQRead 包括序列化的chan，exchange名称，comsumer的Tag
 func MQRead(messageChan chan<- []byte, exName string, qName string, comTag string) {
-	conn, err := amqp.Dial("amqp://admin:csd@123@8.219.103.237:31656/")
+	conn, err := amqp.Dial("amqp://admin:csd@123@172.25.240.10:31656/")
 	failOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
 

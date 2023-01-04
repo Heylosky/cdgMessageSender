@@ -69,7 +69,7 @@ func MBSender(c1 <-chan []byte, accessKey string) {
 				params,
 			)
 			if err != nil {
-				logger.SMSLogOnError(msg.Originator, msg.Payload, msg.Recipients)
+				logger.SMSLogOnError(err, msg.Originator, msg.Payload, msg.Recipients)
 			} else {
 				logger.SMSLogger(message)
 			}

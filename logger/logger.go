@@ -111,8 +111,9 @@ func SMSLogger(message *sms.Message) {
 	)
 }
 
-func SMSLogOnError(originator string, body string, recipient string) {
+func SMSLogOnError(err error, originator string, body string, recipient string) {
 	zap.L().Error("Message sending failed. First time retry failed.",
+		zap.NamedError("error", err),
 		zap.String("Originator", originator),
 		zap.String("Body", body),
 		zap.String("Recipients", recipient),
