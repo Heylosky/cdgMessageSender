@@ -31,7 +31,7 @@ func main() {
 func readFile(filePath string) *smsToMBConf {
 	file, err := os.Open(filePath)
 	if err != nil {
-		zap.L().Panic("No file found.")
+		zap.L().Panic("No MB config file found.")
 	}
 	defer file.Close()
 	var conf smsToMBConf

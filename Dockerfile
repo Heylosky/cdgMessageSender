@@ -13,5 +13,5 @@ FROM scratch
 COPY --from=builder /build/messageSender /
 COPY --from=builder /build/msgSender.log /
 COPY --from=builder /build/MBconfig.json /
-COPY --from=builder /build/server.crt /etc/ssl/certs/
+COPY --from=builder /build/ca-bundle.crt /etc/ssl/certs/
 ENTRYPOINT ["/messageSender"]

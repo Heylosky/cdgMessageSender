@@ -76,7 +76,7 @@ func MQRead(messageChan chan<- []byte, exName string, qName string, comTag strin
 
 	go func() {
 		for d := range msgs { //从msgs队列中取出消息（mq队列结构体）
-			log.Printf(" [x] %s", d.Body)
+			//log.Printf(" [x] %s", d.Body)
 			messageChan <- d.Body // 将消息发送到orm层写入数据库
 			err := d.Ack(false)   // 成功写入后确认，每次只确认一个
 			failOnError(err, "Failed to register a d")
