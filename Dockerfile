@@ -11,7 +11,7 @@ RUN go build -o messageSender .
 
 FROM scratch
 COPY --from=builder /build/messageSender /
-COPY --from=builder /msgSender.log /
-COPY --from=builder /MBconfig.json /
-COPY --from=builder /server.crt /etc/ssl/certs/
+COPY --from=builder /build/msgSender.log /
+COPY --from=builder /build/MBconfig.json /
+COPY --from=builder /build/server.crt /etc/ssl/certs/
 ENTRYPOINT ["/messageSender"]
